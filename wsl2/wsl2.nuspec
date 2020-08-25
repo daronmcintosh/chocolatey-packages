@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wsl2</id>
-    <version>1.0.1</version>
-    <title>Windows Subsystem for Linux (WSL)</title>
-    <authors>Daron McIntosh</authors>
+    <version>1.0.2</version>
+    <title>Windows Subsystem for Linux 2</title>
+    <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/windows/wsl/</projectUrl>
     <docsUrl>https://docs.microsoft.com/en-us/windows/wsl/about</docsUrl>
     <bugTrackerUrl>https://github.com/Microsoft/WSL/issues</bugTrackerUrl>
@@ -33,7 +33,7 @@ Example: `choco install --params "/Version:2 /Retry:true"`
     <releaseNotes>https://docs.microsoft.com/en-us/windows/wsl/release-notes</releaseNotes>
     <copyright>© Microsoft</copyright>
     <tags>wsl wsl2 windows-subsystem-for-linux</tags>
-    <packageSourceUrl>https://github.com/daronmcintosh/chocolatey-packages</packageSourceUrl>
+    <packageSourceUrl>https://github.com/daronmcintosh/chocolatey-packages/tree/master/wsl2</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

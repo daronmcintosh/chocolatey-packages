@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>wsl-ubuntu-2004</id>
+    <version>20.4.0.20200826</version>
+    <title>Ubuntu 20.04 LTS for WSL</title>
+    <authors>Canonical Ltd.</authors>
+    <projectUrl>https://ubuntu.com/wsl</projectUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/windows/wsl/about</docsUrl>
+    <bugTrackerUrl>https://github.com/Microsoft/WSL/issues</bugTrackerUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/daronmcintosh/chocolatey-packages@master/wsl-ubuntu-2004/ubuntu_orange_hex.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[*"Ubuntu 20.04 LTS on Windows allows you to use Ubuntu Terminal and run Ubuntu command line utilities including bash, ssh, git, apt and many more."* - <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
+
+## Package parameters
+
+- `/RootInstall:true` - whether to set the default user as root. Defaults to `false`
+
+## Note
+
+- This package checks to see if WSL is installed before downloading the distro archive file. If this check fails, the install will fail.
+- **Important:** Install [wsl](https://chocolatey.org/packages/wsl) or [wsl2](https://chocolatey.org/packages/wsl2) then restart before attempting to install this package. A dependency was not declared since installing this package on a fresh install of Windows will always fail since WSL requires a restart before it can be used.
+]]></description>
+    <summary>Ubuntu 20.04</summary>
+    <releaseNotes></releaseNotes>
+    <copyright>© Canonical Ltd.</copyright>
+    <tags>wsl wsl2 ubuntu linux focalfossa</tags>
+    <packageSourceUrl>https://github.com/daronmcintosh/chocolatey-packages/tree/master/wsl-ubuntu-2004</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wsl2</id>
-    <version>1.0.2</version>
+    <version>1.0.1</version>
     <title>Windows Subsystem for Linux 2</title>
     <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/windows/wsl/</projectUrl>
@@ -29,7 +29,7 @@ Example: `choco install --params "/Version:2 /Retry:true"`
   - `/Retry:true` should only be set when installing WSL 2 on systems that didn't have WSL 1. Setting this param to `true` will schedule a self deleting task if script didn't detect WSL. That task if created will run `choco install wsl2 -y -f` in a powershell window after the computer is restarted.
   - `/Retry:false` you will have to run `choco install wsl2 -f` again manually after a restart if script didn't detect WSL.
 ]]></description>
-    <summary>Windows Subsystem for Linux lets you run a linux distro on Windows.</summary>
+    <summary>Windows Subsystem for Linux 2</summary>
     <releaseNotes>https://docs.microsoft.com/en-us/windows/wsl/release-notes</releaseNotes>
     <copyright>© Microsoft</copyright>
     <tags>wsl wsl2 windows-subsystem-for-linux</tags>

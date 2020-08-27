@@ -2,10 +2,6 @@
 
 *"Ubuntu 20.04 LTS on Windows allows you to use Ubuntu Terminal and run Ubuntu command line utilities including bash, ssh, git, apt and many more."* - <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
 
-## Package parameters
-
-- `/RootInstall:true` - whether to set the default user as root. Defaults to `false`
-
 ## Note
 
 - This package checks to see if WSL is installed before downloading the distro archive file. If this check fails, the install will fail.

@@ -21,4 +21,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor 64
+update -ChecksumFor 64 -Force

@@ -87,6 +87,10 @@ elseif ($packageArgs.Version -eq 2 -and
     Install-ChocolateyPackage @packageArgs
     & wsl.exe --set-default-version 2
 }
+# https://www.appveyor.com/docs/environment-variables/
+elseif ($env:APPVEYOR -eq 'True') {
+    Write-Output 'Building package on AppVeyor'
+}
 else {
     Write-NotSupportedError
 }

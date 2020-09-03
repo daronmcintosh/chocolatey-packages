@@ -6,6 +6,7 @@
     <version>1.0.1</version>
     <title>Windows Subsystem for Linux 2</title>
     <authors>Microsoft</authors>
+    <owners>Daron McIntosh</owners>
     <projectUrl>https://docs.microsoft.com/en-us/windows/wsl/</projectUrl>
     <docsUrl>https://docs.microsoft.com/en-us/windows/wsl/about</docsUrl>
     <bugTrackerUrl>https://github.com/Microsoft/WSL/issues</bugTrackerUrl>

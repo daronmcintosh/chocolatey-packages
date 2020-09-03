@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wsl-ubuntu-2004</id>
-    <version>20.4.0</version>
+    <version>20.04.0.20200827</version>
     <title>Ubuntu 20.04 LTS for WSL</title>
     <authors>Canonical Ltd.</authors>
     <owners>Daron McIntosh</owners>

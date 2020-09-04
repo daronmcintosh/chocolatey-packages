@@ -7,7 +7,7 @@
 - `/Version:1` - the version of WSL to install. Defaults to `2`
 - `/Retry:true` - whether to retry install on logon after computer is restarted for WSL 2. Ignored when `Version` is `1` and it defaults to `false`
 
-Example: `choco install --params "/Version:2 /Retry:true"`
+Example: `choco install wsl2 --params "/Version:2 /Retry:true"`
 
 ## Note
 

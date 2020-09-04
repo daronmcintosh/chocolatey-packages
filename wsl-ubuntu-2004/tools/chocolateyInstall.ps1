@@ -1,5 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$installRoot = $false
+
+$pp = Get-PackageParameters
+if ([bool]$pp.InstallRoot -eq $true) { $installRoot = $pp.InstallRoot }
+
 $packageArgs = @{
     packageName    = 'wsl-ubuntu-2004'
     softwareName   = 'Ubuntu 20.04 LTS for WSL'
@@ -23,4 +28,8 @@ if (!$wslIntalled) {
 Get-ChocolateyWebFile @packageArgs
 
 Add-AppxPackage $packageArgs.fileFullPath
-wslconfig /list
+
+if ($installRoot) {
+    & ubuntu.exe install --root
+    & wsl.exe --list --verbose
+}

@@ -1,4 +1,4 @@
 $ErrorActionPreference = 'Stop'
 
-wslconfig /unregister "Ubuntu-20.04"
-wslconfig /list
+& wsl.exe --unregister "Ubuntu"
+& wsl.exe --list --verbose

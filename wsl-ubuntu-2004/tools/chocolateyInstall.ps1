@@ -30,6 +30,11 @@ Get-ChocolateyWebFile @packageArgs
 Add-AppxPackage $packageArgs.fileFullPath
 
 if ($installRoot) {
-    & ubuntu.exe install --root
+    if (Get-Command ubuntu2004.exe -ErrorAction SilentlyContinue) {
+        & ubuntu2004.exe install --root
+    }
+    else {
+        & ubuntu.exe install --root
+    }
     & wsl.exe --list --verbose
 }

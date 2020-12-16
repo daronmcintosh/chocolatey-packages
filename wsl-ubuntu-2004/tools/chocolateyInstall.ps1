@@ -27,7 +27,7 @@ if (!$wslIntalled) {
 
 Get-ChocolateyWebFile @packageArgs
 
-Add-AppxPackage $packageArgs.fileFullPath
+Add-AppxProvisionedPackage -Online -PackagePath $packageArgs.fileFullPath -SkipLicense
 
 if ($installRoot) {
     if (Get-Command ubuntu2004.exe -ErrorAction SilentlyContinue) {

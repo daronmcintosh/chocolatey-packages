@@ -1,5 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$msiLog = New-TemporaryFile
+
 $wslVersion = 2
 $retryInstall = $false
 
@@ -16,8 +18,8 @@ $packageArgs = @{
     checksumType   = 'sha256'
     url            = 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi'
     fileType       = 'msi'
-    silentArgs     = '/quiet /qn /norestart'
-    validExitCodes = @(0, 3010, 1641)
+    silentArgs     = "/quiet /qn /norestart /l $msiLog"
+    validExitCodes = @(0, 3010, 1641, 1603)
 }
 
 # https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-operatingsystem?redirectedfrom=MSDN
@@ -84,7 +86,18 @@ elseif ($packageArgs.Version -eq 2 -and
         }
     }
 
-    Install-ChocolateyPackage @packageArgs
+    Install-ChocolateyPackage @packageArgs  
+    
+    if ( Get-Content $msiLog | Select-String "A later version of the Windows Subsystem for Linux Update is already installed.") {
+        # expected error
+        Set-PowerShellExitCode 0
+    } 
+    else {
+        # something went wrong
+        Set-PowerShellExitCode 1603
+    }
+
+    Remove-Item $msiLog -Force
     & wsl.exe --set-default-version 2
 }
 # https://www.appveyor.com/docs/environment-variables/

@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wsl2</id>
-    <version>2.0.0.20210721</version>
+    <version>2.0.0.20221013</version>
     <title>Windows Subsystem for Linux 2</title>
     <authors>Microsoft</authors>
     <owners>Daron McIntosh</owners>

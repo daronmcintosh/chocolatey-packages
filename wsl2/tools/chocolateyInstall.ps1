@@ -60,10 +60,14 @@ if ($packageArgs.Version -eq 1 ) {
 }
 # https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2
 # https://devblogs.microsoft.com/commandline/wsl-2-support-is-coming-to-windows-10-versions-1903-and-1909/
+# https://devblogs.microsoft.com/commandline/wsl-2-distros-are-now-supported-on-windows-server/
 elseif ($packageArgs.Version -eq 2 -and
-    $OSProductType -eq [OSType]::WorkStation -and
-    (($OSMajorBuildNumber -in (18362, 18363) -and $OSMinorBuildNumber -ge 1049) -or
-        ($OSMajorBuildNumber -ge 19041))) {
+    ($OSProductType -eq [OSType]::WorkStation -and
+        (($OSMajorBuildNumber -in (18362, 18363) -and $OSMinorBuildNumber -ge 1049) -or
+            ($OSMajorBuildNumber -ge 19041))) -or
+    ($OSProductType -eq [OSType]::Server -and
+        (($OSMajorBuildNumber -eq 20348 -and $OSMinorBuildNumber -ge 768) -or
+            ($OSMajorBuildNumber -ge 20348)))) {
 
     Enable-WSL
     & dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart | Out-Null
